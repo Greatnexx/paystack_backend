@@ -20,11 +20,7 @@ app.get("/test", (req, res) => {
 // Payment routes
 app.use("/api/payment", paymentRoutes);
 
-// Default route to handle root path
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
 
-// Handle favicon.ico requests
+
 
 export default app;
