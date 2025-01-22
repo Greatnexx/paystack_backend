@@ -10,9 +10,9 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get("/test"), (req, res) => {
-    res.send("Hello World!");
-}
+app.get("/test", async(req, res) => {
+    res.send("Hello from server")
+})
 
 app.use("/api/payment", paymentRoutes);
 
