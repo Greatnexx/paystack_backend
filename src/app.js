@@ -10,6 +10,10 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get("/test"), (req, res) => {
+    res.send("Hello World!");
+}
+
 app.use("/api/payment", paymentRoutes);
 
 export default app;
