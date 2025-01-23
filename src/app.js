@@ -7,7 +7,6 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -17,5 +16,10 @@ app.get("/test", (req, res) => {
 
 app.use("/api/payment", paymentRoutes);
 
-
 export default app;
+
+
+
+
+
+
