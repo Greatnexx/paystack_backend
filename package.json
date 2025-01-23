@@ -7,7 +7,7 @@
     "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Godwin Daniel",
   "license": "ISC",
   "description": "integrating a paystack payment gateway",
   "dependencies": {

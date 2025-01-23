@@ -5,12 +5,17 @@ export const getAllPayments = async (req, res) => {
     const pageNumber = Number(req.query.page) || 1;
     const limitNumber = Number(req.query.limit) || 10;
     const skip = (pageNumber - 1) * limitNumber;
+    const search = req.query.search;
 
-    const payments = await PAYMENT.find({})
-      .skip(skip)          
-      .limit(limitNumber);  
+    const filter = search
+      ? { email: { $regex: search, $options: "i" } } 
+      : {};
 
-    const totalPayments = await PAYMENT.countDocuments();
+    const payments = await PAYMENT.find(filter)
+      .skip(skip)
+      .limit(limitNumber);
+
+    const totalPayments = await PAYMENT.countDocuments(filter);
 
     res.status(200).json({
       data: payments,
